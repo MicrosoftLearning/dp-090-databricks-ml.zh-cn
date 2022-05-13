@@ -1,31 +1,36 @@
 ---
 lab:
-    title: '管理模型'
-    module: '模块 3 - 管理试验和模型'
+  title: 管理模型
+  module: Module 3 - Managing Experiments and Models
+ms.openlocfilehash: 8989b8319c3fd55cda9c776b566b8a4a1c2b6d16
+ms.sourcegitcommit: dd49d0d418bf18117549cc0ea1542b754ace865c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "139217560"
 ---
+# <a name="managing-models"></a>管理模型
 
-# 管理模型
+Azure Databricks 模型注册表是用于模型注册、模型版本控制以及标记模型以供部署的强大工具。  在本练习中，你将了解如何通过用户界面和 MLflow API 使用模型注册表。 首先，你需要使用交互式群集访问 Azure Databricks 工作区。 如果没有工作区和/或所需的群集，请按照下面的说明操作。 否则，可以跳到[上传 Databricks 笔记本存档](#Upload-the-Databricks-notebook-archive)部分。
 
-Azure Databricks 模型注册表是一个强大的工具，用于模型注册、模型版本控制，以及标记模型以进行部署。  在此练习中，你将了解如何通过用户界面和 MLflow API 使用模型注册表。首先，你需要使用交互式群集访问 Azure Databricks 工作区。如果没有工作区和/或所需的群集，请按照下面的说明操作。否则，可以跳至[上传 Databricks 笔记本存档](#Upload-the-Databricks-notebook-archive)部分。
+## <a name="prerequisites"></a>先决条件
 
-## 先决条件
+在开始本实验室之前，请完成“Azure Databricks 入门”实验室以设置 Azure Databricks 环境并导入所需的数据和笔记本。
 
-开始本实验室之前，请完成“**Azure Databricks 入门**”实验室，设置 Azure Databricks 环境并导入所需的数据和笔记本。
+## <a name="manage-models"></a>管理模型
 
-## 训练和验证机器学习 ModelManage 模型
-
-在此练习中，你将了解如何在 Azure Databricks 环境中加载和处理数据。
+在本练习中，你将学习如何管理模型。
 
 1. 在 Web 浏览器中，打开 Azure Databricks 工作区。
 
-1. 如果群集未运行，请在“**计算**”页面上，选择群集并按“**&#9654;  启动**”按钮启动该群集
+1. 如果群集未运行，请在“计算”页上选择群集，然后使用“&#9654; 开始”按钮启动它 
 
-1. 在 Azure Databricks 工作区的左侧命令栏中，选择“**工作区**”。然后，选择“**用户**”和 **&#9751; your_user_name**。然后，在名为“**03 - 管理试验和模型**”的文件夹中，打开“**02 - 管理模型**”笔记本。
+1. 在 Azure Databricks 工作区中，使用左侧的命令栏，选择“工作区”。 然后选择“用户”和 &#9751; your_user_name******。 然后在名为“03 - 管理试验和模型”的文件夹中，打开“02 - 管理模型”笔记本 。
 
-1. 将笔记本附加到群集。然后阅读笔记本中的笔记，依次运行每个代码单元。
+1. 将笔记本附加到你的群集。 然后阅读笔记本中的笔记，依次运行每个代码单元。
 
-> **提示**：第一部分“**通过用户界面管理模型**”说明了要执行的操作，因为在笔记本外将涉及这些操作。  最简单的方法可能是在浏览器中打开另一个选项卡，然后一边查看笔记本中的说明，一边在该选项卡中执行这些操作。
+> **提示**：对于第一部分“通过用户界面管理模型”，将有关于要执行的操作的说明，因为大多数这些操作将在笔记本的限制之外进行。  最简单的方法可能是在浏览器中打开第二个选项卡，并在该选项卡中执行这些操作，同时查看笔记本中的说明。
 
-## 清理
+## <a name="clean-up"></a>清理
 
-如果当前完成了使用 Azure Databricks，请在 Azure Databricks 工作区的“**计算**”页面上，选择你的群集，然后选择“**&#9632; 终止**”以将其关闭。否则，让它继续运行以便你在下一个练习中使用。
+如果现在已完成使用 Azure Databricks，请在 Azure Databricks 工作区的“计算”页上选择你的群集，然后选择“&#9632; 终止”将其关闭 。 否则，让它继续运行以便你在下一个练习中使用。
